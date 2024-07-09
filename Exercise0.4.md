@@ -3,9 +3,10 @@ sequenceDiagram
     participant browser
     participant server
 
- browser->>server: Post https://studies.cs.helsinki.fi/exampleapp/new_note [{ "content": "I am learning fullstack", "date": "2024-7-9" }, ... ]
+ browser->>server: Post https://studies.cs.helsinki.fi/exampleapp/new_note [{ "content": "I am learning fullstack", "date": "2024-7-9" }]
+Note right of browser: User enters information and clicks save button
     activate server
-    server-->>browser: URL redirect
+    server-->>browser: URL redirect /notes
     deactivate server
 
     browser->>server: GET https://studies.cs.helsinki.fi/exampleapp/notes
